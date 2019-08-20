@@ -1,0 +1,37 @@
+$colors: (
+  appWhite: #e4e4e4,
+  appBlue: #61e5ed
+);
+
+@function color($colorName) {
+  @return map-get($colors, $colorName);
+}
+
+@mixin media($min-width){
+  @media only screen and (min-width: $min-width){
+    @content;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Muli", sans-serif;
+  background: url("/images/background.png") repeat;
+  color: color(appWhite);
+}
+
+a {
+  text-decoration: none;
+  color: color(appWhite);
+  &:hover {
+    color: color(appBlue);
+  }
+}

@@ -1,0 +1,14 @@
+.wrapper {
+  padding: 10px 20px;
+  width: 100%;
+  margin: 0 auto;
+  @include media(768px){
+    max-width: 720px;
+  }
+  @include media(992px){
+      max-width: 960px;
+  }
+  @include media(1200px){
+      max-width: 1140px;
+  }
+}

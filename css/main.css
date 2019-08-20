@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Muli", sans-serif;
+  background: url("/images/background.png") repeat;
+  color: #e4e4e4;
+}
+
+a {
+  text-decoration: none;
+  color: #e4e4e4;
+}
+
+a:hover {
+  color: #61e5ed;
+}
+
+.wrapper {
+  padding: 10px 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    max-width: 720px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .wrapper {
+    max-width: 960px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    max-width: 1140px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
