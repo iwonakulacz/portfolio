@@ -12,6 +12,9 @@
     max-width: 1140px;
   }
 }
+section.wrapper {
+  padding: 30px 20px;
+}
 
 .nav {
   display: flex;
@@ -19,22 +22,21 @@
   width: 100%;
   top: 0;
   z-index: 2;
-  .wrapper{
+  .wrapper {
     display: flex;
     justify-content: space-between;
   }
   &__list {
     display: none;
     @include media(991px) {
-        display: flex;
-        align-items: center;
-        li {
-            margin-left: 50px;
-            font-size: 18px;
-            letter-spacing: 1px;
-            
-        }
+      display: flex;
+      align-items: center;
+      li {
+        margin-left: 50px;
+        font-size: 18px;
+        letter-spacing: 1px;
       }
+    }
   }
   &__logo {
     font-size: 20px;
@@ -121,4 +123,116 @@
       font-size: 30px;
     }
   }
+}
+
+.separator {
+  display: none;
+  @include media(991px) {
+    display: block;
+    background: url("../images/separator.jpg") no-repeat;
+    height: 500px;
+    background-size: cover;
+    background-position-y: center;
+    background-attachment: fixed;
+  }
+}
+
+.flexBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.skills__icon {
+  height: 100px;
+  width: auto;
+  margin: 20px;
+  filter: grayscale(0.7);
+}
+
+.contact {
+  .social {
+    text-align: center;
+    margin: 20px 0;
+    p {
+      max-width: 250px;
+      margin: 0 auto;
+    }
+  }
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 24px;
+    a {
+      color: color(appBlue);
+      margin: 15px;
+    }
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    label {
+      position: relative;
+    }
+    textarea.input {
+      vertical-align: top;
+      resize: none;
+      min-height: 100px;
+      padding-top: 0;
+    }
+    .input {
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid color(appWhite);
+      margin: 0 0 40px 0;
+      width: 100%;
+      padding: 7px 0;
+      color: color(appWhite);
+      font-family: "Muli", sans-serif;
+      &:focus {
+        outline: none;
+        border-bottom: 2px solid color(appBlue);
+        & + .placeholder {
+          top: -20px;
+          font-size: 13px;
+        }
+      }
+    }
+    .placeholder {
+      color: color(appGray);
+      position: absolute;
+      top: 2px;
+      left: 0;
+      transition: 0.2s all ease;
+    }
+
+    .button {
+      padding: 10px 25px;
+      border: 2px solid color(appBlue);
+      background: transparent;
+      color: color(appBlue);
+      margin: 0 auto;
+    }
+  }
+  &__grid{
+    @include media(768px){
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-flow: dense;
+    }
+  }
+}
+
+.input:not(:placeholder-shown) + .placeholder,
+textarea:not(:placeholder-shown) + .placeholder {
+  top: -20px;
+  font-size: 13px;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px 20px;
 }

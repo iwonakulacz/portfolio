@@ -1,6 +1,7 @@
 $colors: (
   appWhite: #e4e4e4,
-  appBlue: #61e5ed
+  appBlue: #61e5ed,
+  appGray: #A7A7A7
 );
 
 @function color($colorName) {
@@ -39,4 +40,33 @@ a {
 
 ul{
   list-style: none;
+}
+
+img{
+  width: 100%;
+}
+
+.title{
+  font-size: 42px;
+  margin-bottom: 40px;
+  position: relative;
+  &::after{
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background: color(appBlue);
+    width: 60px;
+    height: 3px;
+    content: '';
+  }
+}
+
+.text{
+  margin: 20px 0;
+}
+
+.subTitle{
+  font-weight: 900;
+  font-size: 24px;
+  text-align: center;
 }
