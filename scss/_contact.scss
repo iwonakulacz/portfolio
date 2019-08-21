@@ -1,0 +1,90 @@
+.contact {
+  .social {
+    grid-column: 2;
+    text-align: center;
+    margin: 20px 0;
+    @include media(991px) {
+      margin: auto;
+    }
+    p {
+      max-width: 250px;
+      margin: 0 auto;
+    }
+  }
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 24px;
+    a {
+      color: color(appBlue);
+      margin: 15px;
+    }
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1;
+    label {
+      position: relative;
+    }
+    textarea.input {
+      vertical-align: top;
+      resize: none;
+      min-height: 100px;
+      padding-top: 0;
+    }
+    .input {
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid color(appWhite);
+      margin: 0 0 40px 0;
+      width: 100%;
+      padding: 7px 0;
+      color: color(appWhite);
+      font-family: "Muli", sans-serif;
+      &:focus {
+        outline: none;
+        border-bottom: 2px solid color(appBlue);
+        & + .placeholder {
+          top: -20px;
+          font-size: 13px;
+        }
+      }
+    }
+    .placeholder {
+      color: color(appGray);
+      position: absolute;
+      top: 2px;
+      left: 0;
+      transition: 0.2s all ease;
+    }
+
+    .button {
+      padding: 10px 25px;
+      border: 2px solid color(appBlue);
+      background: transparent;
+      color: color(appBlue);
+      margin: 0 auto;
+    }
+  }
+  &__grid {
+    @include media(768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-flow: dense;
+    }
+  }
+}
+
+.input:not(:placeholder-shown) + .placeholder,
+textarea:not(:placeholder-shown) + .placeholder {
+  top: -20px;
+  font-size: 13px;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}

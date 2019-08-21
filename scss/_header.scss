@@ -1,0 +1,107 @@
+.nav {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__list {
+      display: none;
+      @include media(991px) {
+        display: flex;
+        align-items: center;
+        li {
+          margin-left: 50px;
+          font-size: 18px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+    &__logo {
+      font-size: 20px;
+      font-weight: bold;
+      @include media(575px) {
+        font-size: 25px;
+      }
+    }
+  }
+  .hamburger {
+    background: transparent;
+    width: 20px;
+    height: 12px;
+    position: relative;
+    transition: 0.2s;
+    margin: auto 0 auto auto;
+    overflow: hidden;
+    border: none;
+    .line1,
+    .line2,
+    .line3 {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: color(appWhite);
+      transition: transform 0.2s ease-in;
+    }
+    .line1 {
+      top: 0;
+    }
+    .line2 {
+      top: 5px;
+    }
+    .line3 {
+      bottom: 0;
+    }
+    @include media(991px) {
+      display: none;
+    }
+  }
+  
+  .header {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    &__title {
+      font-size: 36px;
+      font-weight: bold;
+      margin: auto 0;
+      @include media(620px) {
+        font-size: 64px;
+      }
+      span {
+        font-weight: 900;
+        font-size: 54px;
+        display: block;
+        @include media(620px) {
+          font-size: 84px;
+        }
+      }
+    }
+    &__arrow {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-weight: 400;
+      font-size: 22px;
+      color: color(appBlue);
+      @include media(620px) {
+        font-size: 30px;
+      }
+    }
+    &__icons {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 10px;
+      font-size: 22px;
+      @include media(620px) {
+        font-size: 30px;
+      }
+    }
+  }

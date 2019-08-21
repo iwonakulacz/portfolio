@@ -1,7 +1,8 @@
 $colors: (
   appWhite: #e4e4e4,
   appBlue: #61e5ed,
-  appGray: #A7A7A7
+  appGray: #A7A7A7,
+  appDark: #1D1D1D
 );
 
 @function color($colorName) {
