@@ -33,7 +33,7 @@ body {
 a {
   text-decoration: none;
   color: color(appWhite);
-  transition: .2s ease-in-out;
+  transition: .2s ease-in;
   &:hover {
     color: color(appBlue);
   }
