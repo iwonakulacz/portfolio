@@ -37,15 +37,17 @@ section.wrapper {
   margin-bottom: 30px;
 }
 
-.skills__icon {
-  height: 100px;
-  width: auto;
-  margin: 20px;
-  filter: grayscale(0.7);
-  transition: .2s ease;
-  &:hover{
-    transform: scale(1.1);
-    filter: grayscale(0);
+.skills {
+  &__icon {
+    height: 100px;
+    width: auto;
+    margin: 20px;
+    filter: grayscale(0.7);
+    transition: 0.2s ease;
+    &:hover {
+      transform: scale(1.1);
+      filter: grayscale(0);
+    }
   }
 }
 
