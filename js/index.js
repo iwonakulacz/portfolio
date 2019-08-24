@@ -3,6 +3,7 @@ const hamburger = document.querySelector(".hamburger");
 const navList = document.querySelector(".nav__list");
 const navbarLinks = document.querySelectorAll(".nav__list a");
 const navLogo = document.querySelector(".nav__logo");
+const arrow = document.querySelector('.arrowLink');
 let isMenuActive = false;
 
 for (let i = 0; i < navbarLinks.length; i++) {
@@ -10,6 +11,7 @@ for (let i = 0; i < navbarLinks.length; i++) {
 }
 
 navLogo.addEventListener("click", navbarLinkClick);
+arrow.addEventListener('click', (e) => smoothScroll(e));
 
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;

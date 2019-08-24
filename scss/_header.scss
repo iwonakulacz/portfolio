@@ -71,14 +71,20 @@
 }
 .hamburger {
   background: transparent;
-  width: 20px;
-  height: 12px;
+  width: 42px;
+  padding: 10px;
+  height: 32px;
   position: relative;
   transition: 0.2s;
   margin: auto 0 auto auto;
   overflow: hidden;
   border: none;
   z-index: 5;
+  .box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
   .line1,
   .line2,
   .line3 {
@@ -130,6 +136,7 @@
     font-weight: 400;
     font-size: 22px;
     color: color(appBlue);
+    animation: arrowAnimation 1.2s infinite forwards;
     @include media(620px) {
       font-size: 30px;
     }
@@ -154,5 +161,17 @@
   }
   100%{
     transform: translateY(0);
+  }
+}
+
+@keyframes arrowAnimation{
+  0%{
+    transform: translateY(-20%);
+  }
+  50%{
+    transform: translateY(20%);
+  }
+  100%{
+    transform: translateY(-20%);
   }
 }
