@@ -3,17 +3,17 @@ const hamburger = document.querySelector(".hamburger");
 const navList = document.querySelector(".nav__list");
 const navbarLinks = document.querySelectorAll(".nav__list a");
 const navLogo = document.querySelector(".nav__logo");
-const arrow = document.querySelector('.arrowLink');
+const arrow = document.querySelector(".arrowLink");
 let isMenuActive = false;
-const body = document.querySelector('body');
-const slideItems = document.querySelectorAll('.slide-in');
+const body = document.querySelector("body");
+const slideItems = document.querySelectorAll(".slide-in");
 
 for (let i = 0; i < navbarLinks.length; i++) {
   navbarLinks[i].addEventListener("click", navbarLinkClick);
 }
 
 navLogo.addEventListener("click", navbarLinkClick);
-arrow.addEventListener('click', (e) => smoothScroll(e));
+arrow.addEventListener("click", e => smoothScroll(e));
 
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
@@ -31,20 +31,20 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   isMenuActive = !isMenuActive;
   hamburger.setAttribute("aria-expanded", isMenuActive);
-  if(nav.classList.contains('active')){
-    body.classList.add('positionFixed');
-  }else{
-    body.classList.remove('positionFixed');
+  if (nav.classList.contains("active")) {
+    body.classList.add("positionFixed");
+  } else {
+    body.classList.remove("positionFixed");
   }
 });
 
 window.addEventListener("resize", () => {
-    if(window.innerWidth > 991 && navList.classList.contains("active")){
-        navList.classList.remove("active");
-        nav.classList.remove('active');
-        body.classList.remove('positionFixed');
-        hamburger.classList.remove('active');
-    }
+  if (window.innerWidth > 991 && navList.classList.contains("active")) {
+    navList.classList.remove("active");
+    nav.classList.remove("active");
+    body.classList.remove("positionFixed");
+    hamburger.classList.remove("active");
+  }
 });
 
 function navbarLinkClick(e) {
@@ -70,7 +70,8 @@ function smoothScroll(event) {
 function debounce(func, wait = 10, immediate = true) {
   var timeout;
   return function() {
-    var context = this, args = arguments;
+    var context = this,
+      args = arguments;
     var later = function() {
       timeout = null;
       if (!immediate) func.apply(context, args);
@@ -80,20 +81,23 @@ function debounce(func, wait = 10, immediate = true) {
     timeout = setTimeout(later, wait);
     if (callNow) func.apply(context, args);
   };
-};
+}
 
 function checkSlide() {
   slideItems.forEach(slideItem => {
-    const slideInAt = (window.scrollY + window.innerHeight) - slideItem.clientHeight / 3;
+    const slideInAt =
+      window.scrollY + window.innerHeight - slideItem.clientHeight / 3;
     const imageBottom = slideItem.offsetTop + slideItem.clientHeight;
     const isHalfShown = slideInAt > slideItem.offsetTop;
     const isNotScrolledPast = window.scrollY < imageBottom;
     if (isHalfShown && isNotScrolledPast) {
-      slideItem.classList.add('active');
+      slideItem.classList.add("active");
     } else {
-      slideItem.classList.remove('active');
+      slideItem.classList.remove("active");
     }
   });
 }
 
-window.addEventListener('scroll', debounce(checkSlide));
+if (window.innerWidth > 991) {
+  window.addEventListener("scroll", debounce(checkSlide));
+}

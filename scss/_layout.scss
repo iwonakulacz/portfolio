@@ -35,6 +35,7 @@ section.wrapper {
     margin: 20px;
     filter: grayscale(0.7);
     transition: 0.2s ease;
+    will-change: transform;
     &:hover {
       transform: scale(1.1);
       filter: grayscale(0);

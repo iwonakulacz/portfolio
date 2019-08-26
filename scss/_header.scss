@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   z-index: 2;
   transition: 0.2s ease;
@@ -30,6 +30,7 @@
     justify-content: center;
     align-items: center;
     transform: translateY(-100%);
+    will-change: transform;
     transition: 0.6s ease;
     li {
       opacity: 0;
@@ -97,6 +98,7 @@
     background: color(appWhite);
     transition: transform 0.2s;
     transform-origin: center;
+    will-change: transform;
   }
   .line1 {
     top: 0;
@@ -123,10 +125,14 @@
   }
 }
 #header{
-  background: url('../images/separator_black.jpg') no-repeat;
+  background: url('../images/hero.jpg') no-repeat;
   background-size: cover;
   height: 100vh;
   background-attachment: fixed;
+  background-position-x: 70%;
+  @include media(991px){
+    background-position-x: initial;
+  }
 }
 .header {
   position: relative;
