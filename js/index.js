@@ -27,6 +27,7 @@ window.addEventListener("scroll", () => {
 hamburger.addEventListener("click", () => {
   nav.classList.toggle("active");
   navList.classList.toggle("active");
+  hamburger.classList.toggle("active");
   isMenuActive = !isMenuActive;
   hamburger.setAttribute("aria-expanded", isMenuActive);
   if(nav.classList.contains('active')){
@@ -37,8 +38,11 @@ hamburger.addEventListener("click", () => {
 });
 
 window.addEventListener("resize", () => {
-    if(window.width > 991 && navList.classList.contains("active")){
+    if(window.innerWidth > 991 && navList.classList.contains("active")){
         navList.classList.remove("active");
+        nav.classList.remove('active');
+        body.classList.remove('positionFixed');
+        hamburger.classList.remove('active');
     }
 });
 

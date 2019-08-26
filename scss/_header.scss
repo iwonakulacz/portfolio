@@ -94,7 +94,8 @@
     width: 100%;
     height: 2px;
     background: color(appWhite);
-    transition: transform 0.2s ease-in;
+    transition: transform 0.2s;
+    transform-origin: center;
   }
   .line1 {
     top: 0;
@@ -107,6 +108,17 @@
   }
   @include media(991px) {
     display: none;
+  }
+  &.active{
+    .line1{
+      transform: translateY(5px) rotate(45deg);
+    }
+    .line2{
+      opacity: 0;
+    }
+    .line3{
+      transform: translateY(-5px) rotate(-45deg);
+    }
   }
 }
 
