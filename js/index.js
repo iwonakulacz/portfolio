@@ -6,6 +6,7 @@ const navLogo = document.querySelector(".nav__logo");
 const arrow = document.querySelector('.arrowLink');
 let isMenuActive = false;
 const body = document.querySelector('body');
+const slideItems = document.querySelectorAll('.slide-in');
 
 for (let i = 0; i < navbarLinks.length; i++) {
   navbarLinks[i].addEventListener("click", navbarLinkClick);
@@ -65,3 +66,34 @@ function smoothScroll(event) {
     block: "start"
   });
 }
+
+function debounce(func, wait = 10, immediate = true) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+function checkSlide() {
+  slideItems.forEach(slideItem => {
+    const slideInAt = (window.scrollY + window.innerHeight) - slideItem.clientHeight / 3;
+    const imageBottom = slideItem.offsetTop + slideItem.clientHeight;
+    const isHalfShown = slideInAt > slideItem.offsetTop;
+    const isNotScrolledPast = window.scrollY < imageBottom;
+    if (isHalfShown && isNotScrolledPast) {
+      slideItem.classList.add('active');
+    } else {
+      slideItem.classList.remove('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', debounce(checkSlide));

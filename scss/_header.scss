@@ -122,11 +122,16 @@
     }
   }
 }
-
-.header {
+#header{
+  background: url('../images/separator_black.jpg') no-repeat;
+  background-size: cover;
   height: 100vh;
+  background-attachment: fixed;
+}
+.header {
   position: relative;
   display: flex;
+  height: 100vh;
   &__title {
     font-size: 36px;
     font-weight: bold;

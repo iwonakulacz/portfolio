@@ -30,6 +30,8 @@ body {
   font-family: "Muli", sans-serif;
   background: #111217;
   color: color(appWhite);
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -72,4 +74,26 @@ img{
   font-weight: 900;
   font-size: 24px;
   text-align: center;
+}
+
+
+.slide-in {
+  opacity: 0;
+  transition: all .5s;
+}
+
+.align-left.slide-in {
+  transform: translateX(-30%) scale(0.95);
+}
+
+.align-right.slide-in {
+  transform: translateX(30%) scale(0.95);
+}
+.align-bottom.slide-in{
+  transform: translateY(30%) scale(0.95);
+}
+
+.slide-in.active {
+  opacity: 1;
+  transform: translateX(0%) translateY(0%) scale(1);
 }

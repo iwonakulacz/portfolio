@@ -19,17 +19,6 @@ section.wrapper {
 .positionFixed{
   position: fixed;
 }
-.separator {
-  display: none;
-  @include media(991px) {
-    display: block;
-    background: url("../images/separator.jpg") no-repeat;
-    height: 500px;
-    background-size: cover;
-    background-position-y: center;
-    background-attachment: fixed;
-  }
-}
 
 .flexBox {
   display: flex;
