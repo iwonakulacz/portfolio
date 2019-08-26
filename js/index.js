@@ -5,6 +5,7 @@ const navbarLinks = document.querySelectorAll(".nav__list a");
 const navLogo = document.querySelector(".nav__logo");
 const arrow = document.querySelector('.arrowLink');
 let isMenuActive = false;
+const body = document.querySelector('body');
 
 for (let i = 0; i < navbarLinks.length; i++) {
   navbarLinks[i].addEventListener("click", navbarLinkClick);
@@ -28,6 +29,11 @@ hamburger.addEventListener("click", () => {
   navList.classList.toggle("active");
   isMenuActive = !isMenuActive;
   hamburger.setAttribute("aria-expanded", isMenuActive);
+  if(nav.classList.contains('active')){
+    body.classList.add('positionFixed');
+  }else{
+    body.classList.remove('positionFixed');
+  }
 });
 
 window.addEventListener("resize", () => {

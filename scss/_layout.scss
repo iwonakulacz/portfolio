@@ -16,7 +16,9 @@
 section.wrapper {
   padding: 60px 20px 0 20px;
 }
-
+.positionFixed{
+  position: fixed;
+}
 .separator {
   display: none;
   @include media(991px) {

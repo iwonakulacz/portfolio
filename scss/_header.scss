@@ -1,6 +1,6 @@
 .nav {
   display: flex;
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 2;
@@ -14,6 +14,7 @@
   .wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   &__list {
     visibility: hidden;
@@ -79,7 +80,7 @@
   margin: auto 0 auto auto;
   overflow: hidden;
   border: none;
-  z-index: 5;
+  z-index: 6;
   .box{
     position: relative;
     width: 100%;
@@ -136,7 +137,7 @@
     font-weight: 400;
     font-size: 22px;
     color: color(appBlue);
-    animation: arrowAnimation 1.2s infinite forwards;
+    animation: arrowAnimation 1.5s infinite forwards;
     @include media(620px) {
       font-size: 30px;
     }
@@ -165,13 +166,15 @@
 }
 
 @keyframes arrowAnimation{
-  0%{
-    transform: translateY(-20%);
+	0%{
+    opacity: 0;
+    transform: translateY(-50%);
   }
   50%{
-    transform: translateY(20%);
+    opacity: 1;
   }
   100%{
-    transform: translateY(-20%);
+    opacity: 0;
+    transform: translateY(50%);
   }
 }
