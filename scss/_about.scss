@@ -1,0 +1,12 @@
+.about {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include media(991px) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 50px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+  }
+}

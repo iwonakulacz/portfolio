@@ -14,7 +14,9 @@ $colors: (
     @content;
   }
 }
-
+*:focus{
+  outline-color: color(appBlue);
+}
 *,
 *::before,
 *::after {

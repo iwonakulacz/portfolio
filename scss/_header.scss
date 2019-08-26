@@ -38,6 +38,7 @@
       font-size: 22px;
     }
     @include media(991px) {
+      background: transparent;
       visibility: visible;
       transform: translate(0);
       flex-direction: row;
