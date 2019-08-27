@@ -7,7 +7,7 @@ const arrow = document.querySelector(".arrowLink");
 let isMenuActive = false;
 const body = document.querySelector("body");
 const slideItems = document.querySelectorAll(".slide-in");
-
+const html = document.querySelector('html');
 for (let i = 0; i < navbarLinks.length; i++) {
   navbarLinks[i].addEventListener("click", navbarLinkClick);
 }
@@ -32,9 +32,11 @@ hamburger.addEventListener("click", () => {
   isMenuActive = !isMenuActive;
   hamburger.setAttribute("aria-expanded", isMenuActive);
   if (nav.classList.contains("active")) {
-    body.classList.add("positionFixed");
+    body.classList.add("noScroll");
+    html.classList.add("noScroll");
   } else {
-    body.classList.remove("positionFixed");
+    body.classList.remove("noScroll");
+    html.classList.remove("noScroll");
   }
 });
 
@@ -42,7 +44,8 @@ window.addEventListener("resize", () => {
   if (window.innerWidth > 991 && navList.classList.contains("active")) {
     navList.classList.remove("active");
     nav.classList.remove("active");
-    body.classList.remove("positionFixed");
+    body.classList.remove("noScroll");
+    html.classList.remove('noScroll');
     hamburger.classList.remove("active");
   }
 });

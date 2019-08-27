@@ -16,8 +16,8 @@
 section.wrapper {
   padding: 60px 20px 0 20px;
 }
-.positionFixed{
-  position: fixed;
+.noScroll{
+  overflow: hidden;
 }
 
 .flexBox {

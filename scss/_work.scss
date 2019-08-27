@@ -53,6 +53,7 @@
     opacity: 1;
     z-index: 2;
     transition: opacity 0.4s;
+    will-change: opacity;
     @include media(991px) {
       opacity: 0;
     }

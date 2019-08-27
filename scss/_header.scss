@@ -98,7 +98,7 @@
     background: color(appWhite);
     transition: transform 0.2s;
     transform-origin: center;
-    will-change: transform;
+    will-change: transform, opacity;
   }
   .line1 {
     top: 0;
